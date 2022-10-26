@@ -7,4 +7,5 @@ findProject(':kodilla-exception:kodilla-good-patterns')?.name = 'kodilla-good-pa
 include 'kodilla-good-patterns'
 include 'kodilla-spring-intro'
 include 'kodilla-spring'
+include 'kodilla-spring-web'
 
