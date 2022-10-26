@@ -15,11 +15,9 @@ public class TaskList {
     public int taskSize(){
         return tasks.size();
     }
-
     public void addToTaskList(String text){
         tasks.add(text);
     }
-
     public List<String> getTasks() {
         return tasks;
     }
