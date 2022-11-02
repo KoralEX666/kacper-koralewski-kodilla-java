@@ -7,7 +7,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-@SpringBootTest(classes =BoardTestSuite.class)
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@SpringBootTest
 public class BoardTestSuite {
 
     @Test
@@ -38,9 +40,11 @@ public class BoardTestSuite {
         //Then
         board.check();
         System.out.println("ToDoList has those elements " + board.getToDoList().getTasks());
+        assertEquals(1, board.getToDoList().taskSize());
         System.out.println("InProgressList has those elements " + board.getInProgressList().getTasks());
+        assertEquals(1, board.getInProgressList().taskSize());
         System.out.println("DoneList has those elements " + board.getDoneList().getTasks());
-
+        assertEquals(1, board.getDoneList().taskSize());
     }
 
 }
