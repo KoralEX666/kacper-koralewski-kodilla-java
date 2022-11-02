@@ -14,21 +14,25 @@ public final class Calculator {
         this.display = display;
     }
 
-    public void add(double a, double b) {
+    public double add(double a, double b) {
         double val=a+b;
         display.displayValue(val);
+        return val;
     }
-    public void sub(double a, double b) {
+    public double sub(double a, double b) {
         double val=a-b;
         display.displayValue(val);
+        return val;
     }
-    public void mul(double a, double b) {
+    public double mul(double a, double b) {
         double val=a*b;
         display.displayValue(val);
+        return val;
     }
-    public void div(double a, double b) {
+    public double div(double a, double b) {
         double val=a/b;
         display.displayValue(val);
+        return val;
     }
 
 }

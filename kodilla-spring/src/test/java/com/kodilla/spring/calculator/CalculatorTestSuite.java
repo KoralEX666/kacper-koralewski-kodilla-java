@@ -6,6 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest(classes = CalculatorTestSuite.class)
 public class CalculatorTestSuite {
 
@@ -17,10 +19,10 @@ public class CalculatorTestSuite {
         Calculator calculator = context.getBean(Calculator.class);
 
         //When
-        calculator.add(2,7);
+        double result = calculator.add(2, 7);
 
         //Then
-        //do nothing
+        assertEquals(9, result);
     }
     @Test
     void testCalculatorSub() {
@@ -30,10 +32,10 @@ public class CalculatorTestSuite {
         Calculator calculator = context.getBean(Calculator.class);
 
         //When
-        calculator.sub(2,7);
+        double result = calculator.sub(2,7);
 
         //Then
-        //do nothing
+        assertEquals(-5, result);
     }
     @Test
     void testCalculatorMul() {
@@ -43,10 +45,10 @@ public class CalculatorTestSuite {
         Calculator calculator = context.getBean(Calculator.class);
 
         //When
-        calculator.mul(2,7);
+        double result = calculator.mul(2,7);
 
         //Then
-        //do nothing
+        assertEquals(14, result);
     }
     @Test
     void testCalculatorDiv() {
@@ -56,10 +58,10 @@ public class CalculatorTestSuite {
         Calculator calculator = context.getBean(Calculator.class);
 
         //When
-        calculator.div(2,7);
+        double result =  calculator.div(2,7);
 
         //Then
-        //do nothing
+        assertEquals(0.2857, result, 0.0009);
     }
 
 
