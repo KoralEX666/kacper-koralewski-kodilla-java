@@ -15,10 +15,11 @@ import java.util.List;
 @Configuration
 public class BoardConfig {
 
+    /*
     @Autowired
-    @Qualifier("todolist")
-    TaskList taskList;
+    @Qualifier("todolist")*/
     Board board;
+
 
     @Bean(name = "todolist")
     @Scope("prototype")

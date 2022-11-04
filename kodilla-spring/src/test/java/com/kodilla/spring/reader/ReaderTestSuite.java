@@ -7,7 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = ReaderTestSuite.class)
+@SpringBootTest
 class ReaderTestSuite {
 
     @Test
