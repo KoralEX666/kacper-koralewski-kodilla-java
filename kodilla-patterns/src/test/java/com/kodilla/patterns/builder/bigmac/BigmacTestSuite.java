@@ -20,10 +20,11 @@ public class BigmacTestSuite {
                .ingredient("cheese")
                .build();
        System.out.println(bigmac);
-       //When
-        int howManyIngredients = bigmac.getIngredients().size();
-        //Then
-        assertEquals(5, howManyIngredients);
+       //When & Then
+        assertEquals("sesame", bigmac.getBun());
+        assertEquals(15, bigmac.getBurgers());
+        assertEquals(5,  bigmac.getIngredients().size());
+        assertEquals("barbecue", bigmac.getSauce());
 
 
 
