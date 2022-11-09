@@ -1,0 +1,62 @@
+CREATE TABLE ISSUESLISTS
+(
+    ID SERIAL PRIMARY KEY,
+    NAME  VARCHAR(100)
+);
+
+CREATE TABLE ISSUES
+(
+    ID SERIAL PRIMARY KEY,
+    ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+    SUMMARY VARCHAR(1024),
+    DESCRIPTION VARCHAR(1024),
+    USER_ID_ASSIGNEDTO BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS(ID),
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES USERS(ID)
+);
+
+COMMIT;
+
+INSERT INTO ISSUESLISTS (NAME)
+    VALUES ("ToDo");
+INSERT INTO ISSUESLISTS (NAME)
+    VALUES ("In progress");
+INSERT INTO ISSUESLISTS (NAME)
+    VALUES ("Done");
+
+COMMIT;
+
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+    VALUES (1,"visit a club", "find potential victim", 1);
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+    VALUES (1,"murder a stripper", "plann and execute murder", 2);
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+    VALUES (1,"hide a body", "take killed from Zachary and hide a body", 3);
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+    VALUES (1,"destroy all evidence", "destroy, anihilate or shatter all evidence", 4);
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+    VALUES (1,"have sure all is done correct", "Get rid of John S., Zachary, Stephanie & John T.... in some clever accident", 5);
+
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+VALUES (2,"choise viselly club", "find club where are no cammeras, and is easy to hide", 1);
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+VALUES (2,"make ice spike", "prepare correct amount of spikes in case of fail, and make sure they will be durable enought", 2);
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+VALUES (2,"find a spot", "check forests, sewer effusions, garbage dumps", 3);
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+VALUES (2,"find a place", "find correct place to burn car, and way to destroy biological evidences", 4);
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+VALUES (2,"plann a accident", "invinite all team for party on boat, where some technical issues will appear", 5);
+
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+VALUES (3,"find disguise", "disguise purchased", 1);
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+VALUES (3,"ice spikes mold test", "best mold for spike tested, and chosen", 2);
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+VALUES (3,"car bought", "some unsuspision car purchased", 3);
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+VALUES (3,"chemical shoping done", "bleach, benzine, and some extra stuff purchased", 4);
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+VALUES (3,"party location", "tickets for yaht to bahamas purchased", 5);
+
+COMMIT;
