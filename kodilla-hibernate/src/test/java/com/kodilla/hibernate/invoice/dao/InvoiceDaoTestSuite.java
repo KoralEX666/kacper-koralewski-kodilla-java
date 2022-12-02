@@ -35,9 +35,9 @@ public class InvoiceDaoTestSuite {
 
         Invoice invoice = new Invoice("5");
 
-        productDao.save(product);
+        /*productDao.save(product);
         productDao.save(product2);
-        productDao.save(product3);
+        productDao.save(product3);*/
 
         item.setProduct(product);
         item2.setProduct(product2);
